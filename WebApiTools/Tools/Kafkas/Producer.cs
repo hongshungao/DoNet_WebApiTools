@@ -23,7 +23,7 @@ namespace WebApiTools.Tools.Kafkas
             {
                 config = new ProducerConfig()
                 {
-                    BootstrapServers = "117.72.17.16:9092",
+                    BootstrapServers = "",
                 };
             }
             else
@@ -31,11 +31,11 @@ namespace WebApiTools.Tools.Kafkas
                 config = new ProducerConfig()
                 {
                    //  kafka地址
-                    BootstrapServers = "f2-kafka-01-stg.nioint.com:9092,f2-kafka-02-stg.nioint.com:9092,f2-kafka-03-stg.nioint.com:9092",
+                    BootstrapServers = "",
                      //kafka用户名
-                    SaslUsername = "z5O7hG7DNem2v5Rs5kT",
+                    SaslUsername = "",
                     // kafka密码
-                    SaslPassword = "m1oaXD3H92V92CsxGjl",
+                    SaslPassword = "",
                      //  配置认证机制
                     SaslMechanism = SaslMechanism.Plain,
                     SecurityProtocol = SecurityProtocol.SaslPlaintext,
