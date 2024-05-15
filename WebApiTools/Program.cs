@@ -27,7 +27,6 @@ try
     builder.Services.AddSwaggerGen();
     //builder.Services.AddAgileConfig();
     #region ЗўЮёзЂВс
-   
     ConfigureServices.Configure(builder);
     #endregion
 
