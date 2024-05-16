@@ -41,7 +41,7 @@ namespace WebApiTools
             bool result = type.GetInterfaces().Any(x => x.IsGenericType && x.GetGenericTypeDefinition() == baseInterface);
             return result;
         }
-        /// <summary>
+        /// <summary>  
         /// 服务注册
         /// </summary>
         /// <param name="services"></param>
