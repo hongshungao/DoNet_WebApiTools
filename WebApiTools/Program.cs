@@ -25,7 +25,6 @@ try
     var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddControllers();
     builder.Services.AddSwaggerGen();
-    //builder.Services.AddAgileConfig();
     #region ЗўЮёзЂВс
     ConfigureServices.Configure(builder);
     #endregion

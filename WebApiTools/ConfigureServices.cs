@@ -51,11 +51,11 @@ namespace WebApiTools
             var _env = builder.Environment.EnvironmentName;
 
            
-            builder.Services.AddScoped<Publisher>();
-            builder.Services.AddSingleton<ITestServices, TestServices>();
-            // 配置自动注入eventBus
-            ConfigureEventBus(builder.Services);
-            ConfigureAgileConfig(configuration, _env);
+            //builder.Services.AddScoped<Publisher>();
+            //builder.Services.AddSingleton<ITestServices, TestServices>();
+            //// 配置自动注入eventBus
+            //ConfigureEventBus(builder.Services);
+            //ConfigureAgileConfig(configuration, _env);
         }
 
         #region Event_Bus
