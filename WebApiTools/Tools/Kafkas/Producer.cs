@@ -18,7 +18,7 @@ namespace WebApiTools.Tools.Kafkas
         public static async Task<dynamic> SendAsync(string dto)
         {
             ProducerConfig config;
-            var topic = "dd-lmes-stg-mam-bom";
+            var topic = "dd-lmes-stg-mam-process";
             if (!IsAuthentication)
             {
                 config = new ProducerConfig()
@@ -31,11 +31,11 @@ namespace WebApiTools.Tools.Kafkas
                 config = new ProducerConfig()
                 {
                    //  kafka地址
-                    BootstrapServers = "",
+                    BootstrapServers = "f2-kafka-01-stg.nioint.com:9092,f2-kafka-02-stg.nioint.com:9092,f2-kafka-03-stg.nioint.com:9092",
                      //kafka用户名
-                    SaslUsername = "",
+                    SaslUsername = "z5O7hG7DNem2v5Rs5kT",
                     // kafka密码
-                    SaslPassword = "",
+                    SaslPassword = "m1oaXD3H92V92CsxGjl",
                      //  配置认证机制
                     SaslMechanism = SaslMechanism.Plain,
                     SecurityProtocol = SecurityProtocol.SaslPlaintext,
@@ -51,7 +51,7 @@ namespace WebApiTools.Tools.Kafkas
                 //    ContractResolver = new CamelCasePropertyNamesContractResolver()
                 //};
 
-                var value = dto.ToLower();//JsonConvert.SerializeObject(dto, setting);
+                var value = dto;//.ToLower();//JsonConvert.SerializeObject(dto, setting);
                 using var p = producerBuilder.Build();
 
                 var dr = await p.ProduceAsync(topic, new Message<Null, string> { Value = value });

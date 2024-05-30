@@ -12,7 +12,8 @@ namespace WebApiTools.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TestController(ITestServices TestService) : ControllerBase
+    //public class TestController(ITestServices TestService) : ControllerBase
+    public class TestController: ControllerBase
     {
 
         [HttpPost("KafkaSend",Name = "KafkaSend")]
@@ -22,11 +23,11 @@ namespace WebApiTools.Controllers
         }
 
 
-        [HttpGet("Publish",Name = "Publish")]
-        public async Task PublishAsync(MyEvent @event)
-        {
-            await TestService.PublishAsync(@event, default);
-        }
+        //[HttpGet("Publish",Name = "Publish")]
+        //public async Task PublishAsync(MyEvent @event)
+        //{
+        //    await TestService.PublishAsync(@event, default);
+        //}
 
 
     }
